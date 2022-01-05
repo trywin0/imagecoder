@@ -32,6 +32,26 @@ button {
     cursor: pointer;
 }
 
+.disabled {
+    color: rgba(28, 207, 28, 0.5)
+}
+
+.spin {
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 input {
     background-color: black !important;
@@ -48,4 +68,20 @@ input {
 
 p {
     color: rgba(255, 255, 255, 0.383);
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+a {
+    text-decoration: none;
+    color: aqua;
+}
+
+.fa-heart {
+    color: red;
 }

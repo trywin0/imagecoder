@@ -7,14 +7,15 @@
     <title>ImageCoder</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <h1 id="title" class="center">ImageCoder</h1>
     <div class="buttons center">
-        <button id="process">Process</button>
-        <button id="revert">Revert</button>
+        <button id="process"><i class="fa fa-cog"></i> Process</button>
+        <button id="revert"><i class="fa fa-undo"></i> Revert</button>
         <label for="file-upload" class="custom-file-upload">
-            <i class="fa fa-cloud-upload"></i> Change Image
+            <i class="fa fa-cloud-upload"></i> Upload Image
         </label>
         <input type="file" id="file-upload" name="file-upload" accept="image/*">
     </div>
@@ -29,6 +30,7 @@ for(let i = 0; i < pixels.length; i++){
 }
     </pre>
     <canvas id="image"></canvas>
+    <footer>Made with <i class="fa fa-heart"></i> by <a href="https://github.com/trywin0" target="_blank">trywin</a></footer>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
     <script src="script.js"></script>
 

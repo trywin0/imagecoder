@@ -32,8 +32,8 @@ function drawImageFromUrl(sourceurl) {
 drawImageFromUrl("./templateimg.jpg")
 
 processButton.onclick = () => {
-    processButton.innerText="Processing..."
-
+    processButton.innerHTML='<i class="fa fa-cog spin"></i> Processing'
+    processButton.classList.add("disabled")
     ctx.fillStyle="rgba(0,0,0,0.9)"
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle="rgba(255,255,255,0.9)"
@@ -50,11 +50,10 @@ processButton.onclick = () => {
         eval(codeInput.innerText)
         newImageData.data.set(pixels.flat(1))
         ctx.putImageData(newImageData, 0, 0)
-        processButton.innerText = "Process"
+        processButton.innerHTML='<i class="fa fa-cog"></i> Process'
+        processButton.classList.remove("disabled")
     }, 100);
- 
-    console.log("Processed")
-}
+ }
 
 const revertButton = document.getElementById("revert")
 revertButton.onclick = () => {
