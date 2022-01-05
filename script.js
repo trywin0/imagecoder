@@ -33,6 +33,13 @@ drawImageFromUrl("./templateimg.jpg")
 
 processButton.onclick = () => {
     processButton.innerText="Processing..."
+
+    ctx.fillStyle="rgba(0,0,0,0.9)"
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    ctx.fillStyle="rgba(255,255,255,0.9)"
+    ctx.font = "30px monospace";
+    const measurements = ctx.measureText("Processing image...")
+    ctx.fillText("Processing image...", canvas.width/2-measurements.width/2, canvas.height/2-measurements.fontBoundingBoxAscent/2)
     setTimeout(() => {
         let imgData = originalCtx.getImageData(0,0,canvas.width,canvas.height)
         let newImageData = ctx.getImageData(0,0,canvas.width,canvas.height)
@@ -44,7 +51,7 @@ processButton.onclick = () => {
         newImageData.data.set(pixels.flat(1))
         ctx.putImageData(newImageData, 0, 0)
         processButton.innerText = "Process"
-    }, 10);
+    }, 100);
  
     console.log("Processed")
 }
