@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageCoder</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1 id="title" class="center">ImageCoder</h1>
+    <div class="buttons center">
+        <button id="process">Process</button>
+        <label for="file-upload" class="custom-file-upload">
+            <i class="fa fa-cloud-upload"></i> Change Image
+        </label>
+        <input type="file" id="file-upload" name="file-upload" accept="image/*">
+    </div>
+    <p class="center">Do not run code from strangers :)</p>
+    <pre id="code" class="prettyprint lang-js" spellcheck="false" contenteditable="true">
+for(let i = 0; i < pixels.length; i++){
+    pixels[i][0]=255-pixels[i][0] // red value inverted
+    pixels[i][1]=255-pixels[i][1] // green value inverted
+    pixels[i][2]=255-pixels[i][2] // blue value inverted
+}
+    </pre>
+    <canvas id="image"></canvas>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</body>
+</html>
