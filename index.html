@@ -12,6 +12,7 @@
     <h1 id="title" class="center">ImageCoder</h1>
     <div class="buttons center">
         <button id="process">Process</button>
+        <button id="revert">Revert</button>
         <label for="file-upload" class="custom-file-upload">
             <i class="fa fa-cloud-upload"></i> Change Image
         </label>
@@ -20,14 +21,16 @@
     <p class="center">Do not run code from strangers :)</p>
     <pre id="code" class="prettyprint lang-js" spellcheck="false" contenteditable="true">
 for(let i = 0; i < pixels.length; i++){
-    pixels[i][0]=255-pixels[i][0] // red value inverted
-    pixels[i][1]=255-pixels[i][1] // green value inverted
-    pixels[i][2]=255-pixels[i][2] // blue value inverted
+    // pixels = [[r,g,b,a], ...]
+    pixels[i][0]=255-pixels[i][0] // red color inverted
+    pixels[i][1]=255-pixels[i][1]-30 // green color inverted and lowered
+    pixels[i][2]=255-pixels[i][2] // blue color inverted
+    pixels[i][3]=pixels[i][3]-100 // opacity lowered
 }
     </pre>
     <canvas id="image"></canvas>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 </body>
 </html>

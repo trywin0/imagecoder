@@ -1,5 +1,9 @@
 const codeInput = document.getElementById("code")
 
+codeInput.onblur=()=>{
+    codeInput.innerHTML=PR.prettyPrintOne(codeInput.innerText)
+}
+
 const processButton = document.getElementById("process")
 
 const canvas = document.getElementById("image")
@@ -44,6 +48,12 @@ processButton.onclick = () => {
  
     console.log("Processed")
 }
+
+const revertButton = document.getElementById("revert")
+revertButton.onclick = () => {
+    ctx.drawImage(originalCanvas,0,0)
+}
+
 const input = document.getElementById("file-upload")
 
 input.onchange = ()=>{
